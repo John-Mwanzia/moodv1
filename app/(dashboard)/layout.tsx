@@ -2,8 +2,9 @@ import { UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
 
 const links = [
+  { name: 'Home', href: '/' },
   { name: 'Journals', href: '/journal' },
-  { name: 'Settings', href: '/settings' },
+
 ]
 
 const DashboardLayout = ({ children }) => {
