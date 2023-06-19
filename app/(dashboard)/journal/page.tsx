@@ -1,5 +1,6 @@
 import Entrycard from '@/app/components/Entrycard'
 import NewEntrycard from '@/app/components/NewEntryCard'
+import { analyze } from '@/utils/ai'
 import {getUserByClerkId} from '@/utils/auth'
 import { prisma } from '@/utils/db'
 import Link from 'next/link'
@@ -18,13 +19,14 @@ const getEntries = async () => {
         analysis: true,
       },
     })
+    //  console.log(await analyze("today i read a vey educative book, but it was hard to  get from the library :)"));
+     
   
     return entries
   }
 
 export default async function JounalPage() {
     const entries = await getEntries()
-    console.log("entries", entries)
   return (
     <div>
          <div className="px-6 py-8 bg-zinc-100/50 h-full">
