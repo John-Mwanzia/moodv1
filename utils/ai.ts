@@ -4,7 +4,7 @@ import {OpenAI} from 'langchain/llms/openai'
 import z  from 'zod'
 import { Document } from 'langchain/document'
 import { loadQARefineChain } from "langchain/chains";
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { OpenAIEmbeddings } from "langchain/embeddings";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
 // structured output parser
