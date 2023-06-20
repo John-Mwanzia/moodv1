@@ -1,4 +1,5 @@
 // import HistoryChart from '@/components/HistoryChart'
+import HistoryChart from '@/app/components/HistoryChart'
 import { getUserByClerkId } from '@/utils/auth'
 import { prisma } from '@/utils/db'
 
@@ -7,10 +8,6 @@ const getData = async () => {
   const analyses = await prisma.analysis.findMany({
     where: {
       userId: user.id,
-    },
-  
-    select: {
-      sentimentScore: true,
     },
     orderBy: {
       createdAt: 'asc',
@@ -31,7 +28,7 @@ const History = async () => {
     <div className="w-full h-full">
       <div>{`Avg. Sentiment ${avg}`}</div>
       <div className="w-full h-full">
-        {/* <HistoryChart data={analyses} /> */}
+        <HistoryChart data={analyses} />
       </div>
     </div>
   )
